@@ -1,5 +1,6 @@
 package befaster.solutions.FIZ;
 
+import javax.jnlp.IntegrationService;
 import java.util.function.IntFunction;
 import java.util.function.Predicate;
 
@@ -58,15 +59,20 @@ public final class FizzBuzzSolution {
         return result;
     };
 
-    private final Predicate<String> ALL_DIGITS_ARE_THE_SAME = new Predicate<String>() {
-        @Override
-        public boolean test(final String s) {
-            if(null == s || s.isEmpty()){
-                return false;
-            }
+    private final Predicate<String> ALL_DIGITS_ARE_THE_SAME = s -> {
+        if (null == s || s.isEmpty()) {
             return false;
         }
-    }
+        boolean result = true;
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length - 1; i++) {
+            if (chars[i] != chars[i + 1]) {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    };
 
 
     /**
@@ -119,6 +125,10 @@ public final class FizzBuzzSolution {
      */
     public String fizzBuzz(final Integer number) {
         return FIZZ_BUZZ_IMPL_V2.apply(number);
+    }
+
+    public boolean isDeluxeNumber(final Integer integer){
+        return ALL_DIGITS_ARE_THE_SAME.test(Integer.toString(integer));
     }
 
 }
