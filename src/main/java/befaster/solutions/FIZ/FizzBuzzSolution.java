@@ -1,11 +1,13 @@
 package befaster.solutions.FIZ;
 
 import java.util.function.IntFunction;
+import java.util.function.Predicate;
 
 public final class FizzBuzzSolution {
     public static final String FIZZ = "fizz";
     public static final String BUZZ = "buzz";
     public static final String FIZZ_BUZZ = FIZZ + " " + BUZZ;
+    public static final String DELUXE = "deluxe";
 
     /**
      * If the number is a multiple of three then you should write "fizz"
@@ -56,6 +58,16 @@ public final class FizzBuzzSolution {
         return result;
     };
 
+    private final Predicate<String> ALL_DIGITS_ARE_THE_SAME = new Predicate<String>() {
+        @Override
+        public boolean test(final String s) {
+            if(null == s || s.isEmpty()){
+                return false;
+            }
+            return false;
+        }
+    }
+
 
     /**
      * People like "fizz buzz" but the upper class of the society wants more.
@@ -82,8 +94,12 @@ public final class FizzBuzzSolution {
             }
         }
 
-        if(value > 10) {
-            
+        if (value > 10 && ALL_DIGITS_ARE_THE_SAME.test(number)) {
+            if (result.isEmpty()) {
+                result = DELUXE;
+            } else {
+                result += " " + DELUXE;
+            }
         }
 
         if (result.isEmpty()) {
