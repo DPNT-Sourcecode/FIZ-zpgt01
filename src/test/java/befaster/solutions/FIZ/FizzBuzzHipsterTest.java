@@ -31,8 +31,7 @@ public class FizzBuzzHipsterTest {
 
     @Test
     public void fizzBuzz_divides_by_5_and_contains_5() {
-        //but no repeated digits so vanilla
-        assertThat(fizzBuzzSolution.fizzBuzz(25), is(FizzBuzzSolution.BUZZ));
+        assertThat(fizzBuzzSolution.fizzBuzz(25), is(FizzBuzzSolution.BUZZ_FAKE_DELUXE));
     }
 
     @Test
