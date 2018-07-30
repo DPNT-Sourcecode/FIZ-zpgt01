@@ -8,6 +8,9 @@ public class SumSolution {
      * @return
      */
     public int compute(final int x, final int y) {
+
+
+
         if (x < 0 || x > 100) {
             throw new IllegalArgumentException("x must be between 0 and 100");
         }
