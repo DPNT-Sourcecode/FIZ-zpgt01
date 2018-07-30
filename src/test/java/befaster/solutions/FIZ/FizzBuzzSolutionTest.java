@@ -20,12 +20,14 @@ public class FizzBuzzSolutionTest {
 
     @Test
     public void fizzBuzz_3_and_3() {
-        assertThat(fizzBuzzSolution.fizzBuzz(33), is(FizzBuzzSolution.FIZZ_DELUXE));
+        //odd and repeated digits fso it is fake
+        assertThat(fizzBuzzSolution.fizzBuzz(33), is(FizzBuzzSolution.FIZZ_FAKE_DELUXE));
     }
 
     @Test
     public void fizzBuzz_5_and_5() {
-        assertThat(fizzBuzzSolution.fizzBuzz(55), is(FizzBuzzSolution.BUZZ_DELUXE));
+        //odd and repeated digits fso it is fake
+        assertThat(fizzBuzzSolution.fizzBuzz(55), is(FizzBuzzSolution.BUZZ_FAKE_DELUXE));
     }
 
     @Test

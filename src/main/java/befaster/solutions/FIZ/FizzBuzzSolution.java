@@ -10,9 +10,12 @@ public final class FizzBuzzSolution {
     public static final String DELUXE = "deluxe";
     public static final String FIZZ_BUZZ_DELUXE = FIZZ_BUZZ + " " + DELUXE;
     public static final String FIZZ_DELUXE = FIZZ + " " + DELUXE;
-    public static final String BUZZ_DELUXE = BUZZ + " " + DELUXE;
-    public static final String FAKE_DELUXE = "fake" + " " + DELUXE;
 
+    public static final String BUZZ_DELUXE = BUZZ + " " + DELUXE;
+    public static final String FAKE = "fake";
+    public static final String FAKE_DELUXE = FAKE + " " + DELUXE;
+    public static final String FIZZ_FAKE_DELUXE = FIZZ + " " + FAKE_DELUXE;
+    public static final String BUZZ_FAKE_DELUXE = BUZZ + " " + FAKE_DELUXE;
     /**
      * If the number is a multiple of three then you should write "fizz"
      * - If the number is a multiple of five then you should write "buzz"
@@ -144,7 +147,7 @@ public final class FizzBuzzSolution {
 
         if (value > 10 && ALL_DIGITS_ARE_THE_SAME.test(number)) {
             //this is a deluxe number...
-            final String howDeluxe;
+            String howDeluxe;
             //how deluxe is it?
             if (value % 2 == 0) {
                 howDeluxe = DELUXE;
@@ -175,7 +178,7 @@ public final class FizzBuzzSolution {
      * @return
      */
     public String fizzBuzz(final Integer number) {
-        return FIZZ_BUZZ_IMPL_DELUXE.apply(number);
+        return FIZZ_BUZZ_IMPL_DELUXE_FAKE.apply(number);
     }
 
     public boolean isDeluxeNumber(final Integer integer) {
