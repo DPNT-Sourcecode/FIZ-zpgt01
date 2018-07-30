@@ -15,18 +15,19 @@ public class FizzBuzzSolution {
      * - If the number is a multiple of both three and five then you should write "fizz buzz"
      * - If the number is not a multiple of five or three then write the number, example 1
      */
-    private final IntFunction<String> FIZZ_BUZZ_IMPL = new IntFunction<String>() {
-        @Override
-        public String apply(int value) {
-            if(value %3 == 0 && value % 5 == 0){
-
-            }
-            return null;
+    private final IntFunction<String> FIZZ_BUZZ_IMPL = value -> {
+        if (value % 3 == 0 && value % 5 == 0) {
+            return FIZZ_BUZZ;
+        } else if (value % 3 == 0) {
+            return FIZZ;
+        } else if (value % 5 == 0) {
+            return BUZZ;
         }
+        return Integer.toString(value);
     };
 
-    public String fizzBuzz(Integer number) {
-        throw new SolutionNotImplementedException();
+    public String fizzBuzz(final Integer number) {
+        return FIZZ_BUZZ_IMPL.apply(number);
     }
 
 }
