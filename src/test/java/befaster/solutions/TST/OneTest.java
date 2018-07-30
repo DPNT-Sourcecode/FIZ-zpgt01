@@ -18,4 +18,7 @@ public class OneTest {
     public void run() {
         assertThat(one.apply(), equalTo(1));
     }
+
+
+
 }

@@ -19,4 +19,21 @@ public class SumSolutionTest {
     public void compute_sum() {
         assertThat(sum.compute(1, 1), equalTo(2));
     }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_outside_bounds_x_and_y(){
+        assertThat(sum.compute(-1, -1), equalTo(2));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_outside_bounds_x(){
+        assertThat(sum.compute(-1, 100), equalTo(2));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_outside_bounds_y(){
+        assertThat(sum.compute(100, -1), equalTo(2));
+    }
+
 }

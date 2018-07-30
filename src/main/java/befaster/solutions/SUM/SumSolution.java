@@ -1,7 +1,5 @@
 package befaster.solutions.SUM;
 
-import befaster.runner.SolutionNotImplementedException;
-
 public class SumSolution {
 
     /**
@@ -16,9 +14,7 @@ public class SumSolution {
         if (y < 0 || y > 100) {
             throw new IllegalArgumentException("y must be between 0 and 100");
         }
-
         return x + y;
-
     }
 
 }
