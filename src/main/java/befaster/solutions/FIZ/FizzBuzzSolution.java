@@ -170,6 +170,31 @@ public final class FizzBuzzSolution {
 
 
     /**
+     *   - The old rules for "deluxe" do not apply.
+     *   - A number is "fizz deluxe" if it is divisible by 3 AND it has a 3 in it
+     *   - A number is "buzz deluxe" if it is divisible by 5 AND it has a 5 in it
+     *   - We should still say "fake deluxe" if the "deluxe" number is odd
+     *   - A number can be "fizz", "buzz" and "deluxe" at the same time. If this happens then write "fizz buzz deluxe"
+     *   - All the previous rules for "fizz" and "buzz" are still valid
+     */
+    private final IntFunction<String> FIZZ_BUZZ_HIPSTER = value -> {
+        if (value == 0) {
+            return Integer.toString(value);
+        }
+        if (value % 3 == 0 && value % 5 == 0) {
+            return FIZZ_BUZZ;
+        } else if (value % 3 == 0) {
+            return FIZZ;
+        } else if (value % 5 == 0) {
+            return BUZZ;
+        }
+        return Integer.toString(value);
+    };
+
+
+
+
+    /**
      * Notes:
      * - You do not have to test for illegal input.
      * - The input numbers are between 1-9999
@@ -178,7 +203,7 @@ public final class FizzBuzzSolution {
      * @return
      */
     public String fizzBuzz(final Integer number) {
-        return FIZZ_BUZZ_IMPL_DELUXE_FAKE.apply(number);
+        return FIZZ_BUZZ_HIPSTER.apply(number);
     }
 
     public boolean isDeluxeNumber(final Integer integer) {
