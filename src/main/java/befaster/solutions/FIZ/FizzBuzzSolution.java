@@ -27,6 +27,24 @@ public final class FizzBuzzSolution {
         return Integer.toString(value);
     };
 
+
+    /**
+     * 
+     */
+    private final IntFunction<String> FIZZ_BUZZ_IMPL_V2 = value -> {
+        if(value == 0){
+            return Integer.toString(value);
+        }
+        if (value % 3 == 0 && value % 5 == 0) {
+            return FIZZ_BUZZ;
+        } else if (value % 3 == 0) {
+            return FIZZ;
+        } else if (value % 5 == 0) {
+            return BUZZ;
+        }
+        return Integer.toString(value);
+    };
+
     /**
      * Notes:
      *  - You do not have to test for illegal input.
