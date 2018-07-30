@@ -181,14 +181,27 @@ public final class FizzBuzzSolution {
         if (value == 0) {
             return Integer.toString(value);
         }
-        if (value % 3 == 0 && value % 5 == 0) {
-            return FIZZ_BUZZ;
-        } else if (value % 3 == 0) {
-            return FIZZ;
-        } else if (value % 5 == 0) {
-            return BUZZ;
+        String result = "";
+        String number = Integer.toString(value);
+        if (value % 3 == 0 || number.contains("3")) {
+            result = FIZZ;
         }
-        return Integer.toString(value);
+        if (value % 5 == 0 || number.contains("5")) {
+            if (result.isEmpty()) {
+                result = BUZZ;
+            } else {
+                result = FIZZ_BUZZ;
+            }
+        }
+
+        if (value > 10 && ALL_DIGITS_ARE_THE_SAME.test(number)) {
+
+        }
+
+        if (result.isEmpty()) {
+            result = number;
+        }
+        return result;
     };
 
 
