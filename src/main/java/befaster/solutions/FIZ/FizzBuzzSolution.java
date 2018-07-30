@@ -203,13 +203,19 @@ public final class FizzBuzzSolution {
         }
 
         if (value > 10 && ALL_DIGITS_ARE_THE_SAME.test(number)) {
+            String howDeluxe;
+            if (value % 2 == 0) {
+                howDeluxe = DELUXE;
+            } else {
+                howDeluxe = FAKE_DELUXE;
+            }
             //this is a deluxe number
             if (dividesBy3 && contains3 && dividesBy5 && contains5) {
-                result = FIZZ_BUZZ_DELUXE;
+                result = FIZZ_BUZZ + " " + howDeluxe;
             } else if (dividesBy3 && contains3) {
-                result = FIZZ_DELUXE;
-            } else if (dividesBy5 && contains5)){
-                result = BUZZ_DELUXE;
+                result = FIZZ + " " + howDeluxe;
+            } else if (dividesBy5 && contains5) {
+                result = BUZZ + " " + howDeluxe;
             }
         }
 
