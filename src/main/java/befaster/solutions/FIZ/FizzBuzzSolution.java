@@ -10,6 +10,7 @@ public final class FizzBuzzSolution {
     public static final String FIZZ_BUZZ = FIZZ + " " + BUZZ;
     public static final String DELUXE = "deluxe";
     public static final String FIZZ_BUZZ_DELUXE  = FIZZ_BUZZ + " " + DELUXE;
+    public static final String FIZZ_DELUXE = "fizz" + " " + DELUXE;
 
     /**
      * If the number is a multiple of three then you should write "fizz"

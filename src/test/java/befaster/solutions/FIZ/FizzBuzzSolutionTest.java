@@ -17,12 +17,12 @@ public class FizzBuzzSolutionTest {
 
     @Test
     public void fizzBuzz_3_and_3() {
-        assertThat(fizzBuzzSolution.fizzBuzz(33), is(FizzBuzzSolution.FIZZ));
+        assertThat(fizzBuzzSolution.fizzBuzz(33), is(FizzBuzzSolution.FIZZ_DELUXE));
     }
 
     @Test
     public void fizzBuzz_5_and_5() {
-        assertThat(fizzBuzzSolution.fizzBuzz(55), is(FizzBuzzSolution.BUZZ));
+        assertThat(fizzBuzzSolution.fizzBuzz(55), is(FizzBuzzSolution.FIZZ_BUZZ_DELUXE));
     }
 
     @Test
@@ -54,7 +54,7 @@ public class FizzBuzzSolutionTest {
 
     @Test
     public void fizzBuzz_deluxe() {
-        assertThat(fizzBuzzSolution.fizzBuzz(111), is(FizzBuzzSolution.FIZZ_BUZZ_DELUXE));
+        assertThat(fizzBuzzSolution.fizzBuzz(111), is(FizzBuzzSolution.FIZZ_DELUXE));
     }
 
     @Test
