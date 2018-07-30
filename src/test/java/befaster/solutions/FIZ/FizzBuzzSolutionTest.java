@@ -6,6 +6,9 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
+/**
+ * I should have written the tests first!
+ */
 public class FizzBuzzSolutionTest {
 
     private FizzBuzzSolution fizzBuzzSolution;
@@ -22,7 +25,7 @@ public class FizzBuzzSolutionTest {
 
     @Test
     public void fizzBuzz_5_and_5() {
-        assertThat(fizzBuzzSolution.fizzBuzz(55), is(FizzBuzzSolution.FIZZ_BUZZ_DELUXE));
+        assertThat(fizzBuzzSolution.fizzBuzz(55), is(FizzBuzzSolution.BUZZ_DELUXE));
     }
 
     @Test

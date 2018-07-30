@@ -1,6 +1,5 @@
 package befaster.solutions.FIZ;
 
-import javax.jnlp.IntegrationService;
 import java.util.function.IntFunction;
 import java.util.function.Predicate;
 
@@ -10,7 +9,8 @@ public final class FizzBuzzSolution {
     public static final String FIZZ_BUZZ = FIZZ + " " + BUZZ;
     public static final String DELUXE = "deluxe";
     public static final String FIZZ_BUZZ_DELUXE  = FIZZ_BUZZ + " " + DELUXE;
-    public static final String FIZZ_DELUXE = "fizz" + " " + DELUXE;
+    public static final String FIZZ_DELUXE = FIZZ + " " + DELUXE;
+    public static final String BUZZ_DELUXE = BUZZ + " " + DELUXE;
 
     /**
      * If the number is a multiple of three then you should write "fizz"
