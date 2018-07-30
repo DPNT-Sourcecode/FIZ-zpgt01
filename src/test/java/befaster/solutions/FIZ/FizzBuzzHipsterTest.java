@@ -48,6 +48,6 @@ public class FizzBuzzHipsterTest {
         assertThat(fizzBuzzSolution.fizzBuzz(396), is(FizzBuzzSolution.FIZZ_DELUXE));
         assertThat(fizzBuzzSolution.fizzBuzz(936), is(FizzBuzzSolution.FIZZ_DELUXE));
         assertThat(fizzBuzzSolution.fizzBuzz(936), is(FizzBuzzSolution.FIZZ_DELUXE));
-        assertThat(fizzBuzzSolution.fizzBuzz(30), is(FizzBuzzSolution.FIZZ_DELUXE));
+        assertThat(fizzBuzzSolution.fizzBuzz(30), is(FizzBuzzSolution.FIZZ_BUZZ_DELUXE));
     }
 }

@@ -210,7 +210,7 @@ public final class FizzBuzzSolution {
             howDeluxe = FAKE_DELUXE;
         }
         //this is a deluxe number
-        if (dividesBy3 && contains3 && dividesBy5 && contains5) {
+        if ((dividesBy3 && contains3) && (dividesBy5 && contains5)) {
             result = FIZZ_BUZZ + " " + howDeluxe;
         } else if (dividesBy3 && contains3) {
             result = FIZZ + " " + howDeluxe;
