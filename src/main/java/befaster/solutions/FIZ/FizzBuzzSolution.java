@@ -202,7 +202,7 @@ public final class FizzBuzzSolution {
             }
         }
 
-        if (value > 10 && ALL_DIGITS_ARE_THE_SAME.test(number)) {
+        if (value > 10 /*&& ALL_DIGITS_ARE_THE_SAME.test(number)*/) {
             String howDeluxe;
             if (value % 2 == 0) {
                 howDeluxe = DELUXE;

@@ -40,4 +40,13 @@ public class FizzBuzzHipsterTest {
         //but no repeated digits so vanilla
         assertThat(fizzBuzzSolution.fizzBuzz(55), is(FizzBuzzSolution.BUZZ_FAKE_DELUXE));
     }
+
+
+    @Test
+    public void fizzBuzz_failed_test_data() {
+        //odd and repeated digits fso it is fake
+        assertThat(fizzBuzzSolution.fizzBuzz(36), is(FizzBuzzSolution.FIZZ_DELUXE));
+        assertThat(fizzBuzzSolution.fizzBuzz(396), is(FizzBuzzSolution.FIZZ_DELUXE));
+        assertThat(fizzBuzzSolution.fizzBuzz(936), is(FizzBuzzSolution.FIZZ_DELUXE));
+    }
 }

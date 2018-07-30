@@ -24,6 +24,8 @@ public class FizzBuzzSolutionTest {
         assertThat(fizzBuzzSolution.fizzBuzz(33), is(FizzBuzzSolution.FIZZ_FAKE_DELUXE));
     }
 
+
+
     @Test
     public void fizzBuzz_2_and_2() {
         //odd and repeated digits fso it is fake
