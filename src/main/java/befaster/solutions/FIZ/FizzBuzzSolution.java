@@ -183,8 +183,13 @@ public final class FizzBuzzSolution {
         }
         String result = "";
         String number = Integer.toString(value);
-        if (value % 3 == 0 || number.contains("3")) {
-            result = FIZZ;
+
+        final boolean dividesBy3 = (value % 3 == 0);
+        final boolean contains3 = number.contains("3");
+
+        //  - A number is "fizz deluxe" if it is divisible by 3 AND it has a 3 in it
+        if ( dividesBy3|| contains3) {
+           result = FIZZ;
         }
         if (value % 5 == 0 || number.contains("5")) {
             if (result.isEmpty()) {
