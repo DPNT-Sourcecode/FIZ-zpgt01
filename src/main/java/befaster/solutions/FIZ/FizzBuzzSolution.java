@@ -170,12 +170,12 @@ public final class FizzBuzzSolution {
 
 
     /**
-     *   - The old rules for "deluxe" do not apply.
-     *   - A number is "fizz deluxe" if it is divisible by 3 AND it has a 3 in it
-     *   - A number is "buzz deluxe" if it is divisible by 5 AND it has a 5 in it
-     *   - We should still say "fake deluxe" if the "deluxe" number is odd
-     *   - A number can be "fizz", "buzz" and "deluxe" at the same time. If this happens then write "fizz buzz deluxe"
-     *   - All the previous rules for "fizz" and "buzz" are still valid
+     * - The old rules for "deluxe" do not apply.
+     * - A number is "fizz deluxe" if it is divisible by 3 AND it has a 3 in it
+     * - A number is "buzz deluxe" if it is divisible by 5 AND it has a 5 in it
+     * - We should still say "fake deluxe" if the "deluxe" number is odd
+     * - A number can be "fizz", "buzz" and "deluxe" at the same time. If this happens then write "fizz buzz deluxe"
+     * - All the previous rules for "fizz" and "buzz" are still valid
      */
     private final IntFunction<String> FIZZ_BUZZ_HIPSTER = value -> {
         if (value == 0) {
@@ -187,11 +187,14 @@ public final class FizzBuzzSolution {
         final boolean dividesBy3 = (value % 3 == 0);
         final boolean contains3 = number.contains("3");
 
+        final boolean dividesBy5 = (value % 5 == 0);
+        final boolean contains5 = number.contains("5");
+
         //  - A number is "fizz deluxe" if it is divisible by 3 AND it has a 3 in it
-        if ( dividesBy3|| contains3) {
-           result = FIZZ;
+        if (dividesBy3 || contains3) {
+            result = FIZZ;
         }
-        if (value % 5 == 0 || number.contains("5")) {
+        if (dividesBy5 || contains5) {
             if (result.isEmpty()) {
                 result = BUZZ;
             } else {
@@ -200,7 +203,14 @@ public final class FizzBuzzSolution {
         }
 
         if (value > 10 && ALL_DIGITS_ARE_THE_SAME.test(number)) {
-
+            //this is a deluxe number
+            if (dividesBy3 && contains3 && dividesBy5 && contains5) {
+                result = FIZZ_BUZZ_DELUXE;
+            } else if (dividesBy3 && contains3) {
+                result = FIZZ_DELUXE;
+            } else if (dividesBy5 && contains5)){
+                result = BUZZ_DELUXE;
+            }
         }
 
         if (result.isEmpty()) {
@@ -208,8 +218,6 @@ public final class FizzBuzzSolution {
         }
         return result;
     };
-
-
 
 
     /**
