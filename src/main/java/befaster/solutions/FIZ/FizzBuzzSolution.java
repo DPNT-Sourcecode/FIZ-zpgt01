@@ -8,9 +8,10 @@ public final class FizzBuzzSolution {
     public static final String BUZZ = "buzz";
     public static final String FIZZ_BUZZ = FIZZ + " " + BUZZ;
     public static final String DELUXE = "deluxe";
-    public static final String FIZZ_BUZZ_DELUXE  = FIZZ_BUZZ + " " + DELUXE;
+    public static final String FIZZ_BUZZ_DELUXE = FIZZ_BUZZ + " " + DELUXE;
     public static final String FIZZ_DELUXE = FIZZ + " " + DELUXE;
     public static final String BUZZ_DELUXE = BUZZ + " " + DELUXE;
+    public static final String FAKE_DELUXE = "fake" + " " + DELUXE;
 
     /**
      * If the number is a multiple of three then you should write "fizz"
@@ -120,9 +121,9 @@ public final class FizzBuzzSolution {
     /**
      * Turns out that people do not like odd numbers, they call them "fake".
      * The want us to change the Deluxe version so that:
-     *   - If a "deluxe" number is odd, we should call him "fake deluxe"
-     *   - A number cannot be both "deluxe" and "fake deluxe" at the same time
-     *   - All the previous rules are still valid
+     * - If a "deluxe" number is odd, we should call him "fake deluxe"
+     * - A number cannot be both "deluxe" and "fake deluxe" at the same time
+     * - All the previous rules are still valid
      */
     private final IntFunction<String> FIZZ_BUZZ_IMPL_DELUXE_FAKE = value -> {
         if (value == 0) {
@@ -143,16 +144,18 @@ public final class FizzBuzzSolution {
 
         if (value > 10 && ALL_DIGITS_ARE_THE_SAME.test(number)) {
             //this is a deluxe number...
-
+            final String howDeluxe;
             //how deluxe is it?
-            if(value % 2 == 0){
-                if (result.isEmpty()) {
-                    result = DELUXE;
-                } else {
-                    result += " " + DELUXE;
-                }
-            }else {
-
+            if (value % 2 == 0) {
+                howDeluxe = DELUXE;
+            } else {
+                //odd so it is fake
+                howDeluxe = FAKE_DELUXE;
+            } //even therefore not fake
+            if (result.isEmpty()) {
+                result = howDeluxe;
+            } else {
+                result += " " + howDeluxe;
             }
         }
 
@@ -161,7 +164,6 @@ public final class FizzBuzzSolution {
         }
         return result;
     };
-
 
 
     /**
@@ -176,7 +178,7 @@ public final class FizzBuzzSolution {
         return FIZZ_BUZZ_IMPL_DELUXE.apply(number);
     }
 
-    public boolean isDeluxeNumber(final Integer integer){
+    public boolean isDeluxeNumber(final Integer integer) {
         return ALL_DIGITS_ARE_THE_SAME.test(Integer.toString(integer));
     }
 
