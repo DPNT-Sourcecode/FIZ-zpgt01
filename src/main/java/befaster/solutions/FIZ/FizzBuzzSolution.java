@@ -56,6 +56,43 @@ public final class FizzBuzzSolution {
         return result;
     };
 
+
+    /**
+     * People like "fizz buzz" but the upper class of the society wants more.
+     * Let's create a "Deluxe" version !
+     * It goes like this, we are going to add a new rule:
+     * - A number is considered to be "deluxe" if it is greater than 10 and all the digits are identical
+     * - A number can be "fizz", "buzz" and "deluxe" at the same time.
+     * If this happens then write "fizz buzz deluxe"
+     */
+    private final IntFunction<String> FIZZ_BUZZ_IMPL_DELUXE = value -> {
+        if (value == 0) {
+            return Integer.toString(value);
+        }
+        String result = "";
+        String number = Integer.toString(value);
+        if (value % 3 == 0 || number.contains("3")) {
+            result = FIZZ;
+        }
+        if (value % 5 == 0 || number.contains("5")) {
+            if (result.isEmpty()) {
+                result = BUZZ;
+            } else {
+                result = FIZZ_BUZZ;
+            }
+        }
+
+        if(value > 10) {
+            
+        }
+
+        if (result.isEmpty()) {
+            result = number;
+        }
+        return result;
+    };
+
+
     /**
      * Notes:
      * - You do not have to test for illegal input.
