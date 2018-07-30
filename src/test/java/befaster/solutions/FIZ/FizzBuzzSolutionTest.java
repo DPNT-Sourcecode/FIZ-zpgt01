@@ -15,6 +15,20 @@ public class FizzBuzzSolutionTest {
         fizzBuzzSolution = new FizzBuzzSolution();
     }
 
+    @Test
+    public void fizzBuzz_3_and_3() {
+        assertThat(fizzBuzzSolution.fizzBuzz(33), is(FizzBuzzSolution.FIZZ));
+    }
+
+    @Test
+    public void fizzBuzz_5_and_5() {
+        assertThat(fizzBuzzSolution.fizzBuzz(55), is(FizzBuzzSolution.BUZZ));
+    }
+
+    @Test
+    public void fizzBuzz_3_and_5() {
+        assertThat(fizzBuzzSolution.fizzBuzz(35), is(FizzBuzzSolution.FIZZ_BUZZ));
+    }
 
     @Test
     public void fizzBuzz_3() {

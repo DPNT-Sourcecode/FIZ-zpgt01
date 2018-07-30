@@ -50,8 +50,8 @@ public final class FizzBuzzSolution {
                 result = FIZZ_BUZZ;
             }
         }
-        if(result.isEmpty()){
-            result = number''
+        if (result.isEmpty()) {
+            result = number;
         }
         return result;
     };
@@ -65,7 +65,7 @@ public final class FizzBuzzSolution {
      * @return
      */
     public String fizzBuzz(final Integer number) {
-        return FIZZ_BUZZ_IMPL.apply(number);
+        return FIZZ_BUZZ_IMPL_V2.apply(number);
     }
 
 }
