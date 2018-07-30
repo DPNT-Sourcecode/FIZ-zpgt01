@@ -53,6 +53,11 @@ public class FizzBuzzSolutionTest {
     }
 
     @Test
+    public void fizzBuzz_deluxe() {
+        assertThat(fizzBuzzSolution.fizzBuzz(111), is(FizzBuzzSolution.FIZZ_BUZZ_DELUXE));
+    }
+
+    @Test
     public void isDeluxeNumber() {
         assertTrue("", fizzBuzzSolution.isDeluxeNumber(11));
         assertTrue("", fizzBuzzSolution.isDeluxeNumber(111));

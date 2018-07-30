@@ -9,6 +9,7 @@ public final class FizzBuzzSolution {
     public static final String BUZZ = "buzz";
     public static final String FIZZ_BUZZ = FIZZ + " " + BUZZ;
     public static final String DELUXE = "deluxe";
+    public static final String FIZZ_BUZZ_DELUXE  = FIZZ_BUZZ + " " + DELUXE;
 
     /**
      * If the number is a multiple of three then you should write "fizz"
@@ -60,7 +61,7 @@ public final class FizzBuzzSolution {
     };
 
     private final Predicate<String> ALL_DIGITS_ARE_THE_SAME = s -> {
-        if (null == s || s.isEmpty()) {
+        if (null == s || s.isEmpty() || s.length() == 1) {
             return false;
         }
         boolean result = true;
@@ -124,7 +125,7 @@ public final class FizzBuzzSolution {
      * @return
      */
     public String fizzBuzz(final Integer number) {
-        return FIZZ_BUZZ_IMPL_V2.apply(number);
+        return FIZZ_BUZZ_IMPL_DELUXE.apply(number);
     }
 
     public boolean isDeluxeNumber(final Integer integer){
