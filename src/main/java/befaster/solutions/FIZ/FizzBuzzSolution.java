@@ -118,6 +118,53 @@ public final class FizzBuzzSolution {
 
 
     /**
+     * Turns out that people do not like odd numbers, they call them "fake".
+     * The want us to change the Deluxe version so that:
+     *   - If a "deluxe" number is odd, we should call him "fake deluxe"
+     *   - A number cannot be both "deluxe" and "fake deluxe" at the same time
+     *   - All the previous rules are still valid
+     */
+    private final IntFunction<String> FIZZ_BUZZ_IMPL_DELUXE_FAKE = value -> {
+        if (value == 0) {
+            return Integer.toString(value);
+        }
+        String result = "";
+        String number = Integer.toString(value);
+        if (value % 3 == 0 || number.contains("3")) {
+            result = FIZZ;
+        }
+        if (value % 5 == 0 || number.contains("5")) {
+            if (result.isEmpty()) {
+                result = BUZZ;
+            } else {
+                result = FIZZ_BUZZ;
+            }
+        }
+
+        if (value > 10 && ALL_DIGITS_ARE_THE_SAME.test(number)) {
+            //this is a deluxe number...
+
+            //how deluxe is it?
+            if(value % 2 == 0){
+                if (result.isEmpty()) {
+                    result = DELUXE;
+                } else {
+                    result += " " + DELUXE;
+                }
+            }else {
+
+            }
+        }
+
+        if (result.isEmpty()) {
+            result = number;
+        }
+        return result;
+    };
+
+
+
+    /**
      * Notes:
      * - You do not have to test for illegal input.
      * - The input numbers are between 1-9999
