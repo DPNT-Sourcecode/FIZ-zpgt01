@@ -20,6 +20,8 @@ public class HelloSolutionTest {
 
     @Test
     public void hello() {
-        assertThat(helloSolution.hello(""), is("Hello, World!"));
+        final String fName = "John";
+        assertThat(helloSolution.hello(fName), is("Hello, " + fName + "!"));
+        assertThat(helloSolution.hello(null), is("Hello, World!"));
     }
 }
