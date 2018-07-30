@@ -1,10 +1,8 @@
 package befaster.solutions.FIZ;
 
-import befaster.runner.SolutionNotImplementedException;
-
 import java.util.function.IntFunction;
 
-public class FizzBuzzSolution {
+public final class FizzBuzzSolution {
     public static final String FIZZ = "fizz";
     public static final String BUZZ = "buzz";
     public static final String FIZZ_BUZZ = FIZZ + " " + BUZZ;
@@ -16,6 +14,9 @@ public class FizzBuzzSolution {
      * - If the number is not a multiple of five or three then write the number, example 1
      */
     private final IntFunction<String> FIZZ_BUZZ_IMPL = value -> {
+        if(value == 0){
+            return Integer.toString(value);
+        }
         if (value % 3 == 0 && value % 5 == 0) {
             return FIZZ_BUZZ;
         } else if (value % 3 == 0) {
@@ -26,6 +27,13 @@ public class FizzBuzzSolution {
         return Integer.toString(value);
     };
 
+    /**
+     * Notes:
+     *  - You do not have to test for illegal input.
+     *  - The input numbers are between 1-9999
+     * @param number
+     * @return
+     */
     public String fizzBuzz(final Integer number) {
         return FIZZ_BUZZ_IMPL.apply(number);
     }
