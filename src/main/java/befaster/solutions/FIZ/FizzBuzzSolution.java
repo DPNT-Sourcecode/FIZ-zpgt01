@@ -204,7 +204,7 @@ public final class FizzBuzzSolution {
 
         //if (value > 10 /*&& ALL_DIGITS_ARE_THE_SAME.test(number)*/) {
 
-        if(dividesBy3 && contains3 || dividesBy5 && contains5) {
+        if ((dividesBy3 && contains3) || (dividesBy5 && contains5)) {
 
             String howDeluxe;
             if (value % 2 == 0) {
@@ -218,9 +218,17 @@ public final class FizzBuzzSolution {
             if ((dividesBy3 && contains3) && (dividesBy5 && contains5)) {
                 result = FIZZ_BUZZ + " " + howDeluxe;
             } else if (dividesBy3 && contains3) {
-                result = FIZZ + " " + howDeluxe;
+                if (!result.isEmpty()) {
+                    result = FIZZ + " " + howDeluxe;
+                } else {
+                    result += howDeluxe;
+                }
             } else if (dividesBy5 && contains5) {
-                result = BUZZ + " " + howDeluxe;
+                if (!result.isEmpty()) {
+                    result = BUZZ + " " + howDeluxe;
+                } else {
+                    result += howDeluxe;
+                }
             }
         }
 
