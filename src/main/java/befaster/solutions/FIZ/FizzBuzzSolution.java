@@ -6,15 +6,20 @@ public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
         StringBuilder stringBuilder = new StringBuilder();
-        if (number%3 == 0) {
-            stringBuilder.append("fizz");
+        getString(number, 3, "fizz", stringBuilder);
+        return stringBuilder.toString();
+    }
+
+    public void getString(int dividend, int divisor, String substitute, StringBuilder builder) {
+        if (dividend%divisor == 0) {
+            builder.append(substitute);
         }
 
-        if (String.valueOf(number).contains("3")) {
-            if (number%2 == 0) {
-                stringBuilder.append("deluxe");
+        if (String.valueOf(dividend).contains(String.valueOf(divisor))) {
+            if (dividend%2 == 0) {
+                builder.append("deluxe");
             } else {
-                stringBuilder.append("fake deluxe");
+                builder.append("fake deluxe");
             }
         }
     }
