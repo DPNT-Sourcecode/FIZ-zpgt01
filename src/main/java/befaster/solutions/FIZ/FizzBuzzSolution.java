@@ -1,16 +1,19 @@
 package befaster.solutions.FIZ;
 
-import befaster.runner.SolutionNotImplementedException;
-
 public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
         StringBuilder stringBuilder = new StringBuilder();
-        getString(number, 3, "fizz", stringBuilder);
+        stringBuilder.append(substituteForDivisor(number, 3, "fizz"));
+
+        if (stringBuilder.length() == 0) {
+            stringBuilder.append(number);
+        }
         return stringBuilder.toString();
     }
 
-    public void getString(int dividend, int divisor, String substitute, StringBuilder builder) {
+    public String substituteForDivisor(int dividend, int divisor, String substitute) {
+        StringBuilder builder = new StringBuilder();
         if (dividend%divisor == 0) {
             builder.append(substitute);
         }
@@ -22,6 +25,8 @@ public class FizzBuzzSolution {
                 builder.append("fake deluxe");
             }
         }
+
+        return builder.toString();
     }
 
 }
