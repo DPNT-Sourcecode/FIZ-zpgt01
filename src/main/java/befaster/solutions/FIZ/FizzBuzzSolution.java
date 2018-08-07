@@ -1,32 +1,33 @@
 package befaster.solutions.FIZ;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(substituteForDivisor(number, 3, "fizz"));
+        List<String> builder = new ArrayList();
 
-        if (stringBuilder.length() == 0) {
-            stringBuilder.append(number);
+        if (number%3 == 0) {
+            builder.add("fizz");
         }
+        builder.addAll()
+
         return stringBuilder.toString();
     }
 
-    public String substituteForDivisor(int dividend, int divisor, String substitute) {
-        StringBuilder builder = new StringBuilder();
-        if (dividend%divisor == 0) {
-            builder.append(substitute);
-        }
+    public List<String> getDeluxeCode(final int dividend, final int divisor) {
+        List builder = new ArrayList<>();
 
         if (String.valueOf(dividend).contains(String.valueOf(divisor))) {
             if (dividend%2 == 0) {
-                builder.append("deluxe");
+                builder.add("deluxe");
             } else {
-                builder.append("fake deluxe");
+                builder.add("fake deluxe");
             }
         }
 
-        return builder.toString();
+        return builder;
     }
 
 }
