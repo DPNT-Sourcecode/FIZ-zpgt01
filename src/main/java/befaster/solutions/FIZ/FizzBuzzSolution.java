@@ -11,9 +11,13 @@ public class FizzBuzzSolution {
         if (number%3 == 0) {
             builder.add("fizz");
         }
-        builder.addAll()
+        builder.addAll(getDeluxeCode(number, 3));
 
-        return stringBuilder.toString();
+        if (builder.isEmpty()) {
+            builder.add(String.valueOf(number));
+        }
+
+        return String.join(" ", builder);
     }
 
     public List<String> getDeluxeCode(final int dividend, final int divisor) {
