@@ -25,7 +25,7 @@ public class FizzBuzzSolutionTest {
 
     @Test
     public void computeFizzBuzzFor6() {
-        assertEquals("6 should return fizz deluxe", "fizz deluxe", fizzBuzz.fizzBuzz(6));
+        assertEquals("36 should return fizz deluxe", "fizz deluxe", fizzBuzz.fizzBuzz(36));
     }
 
     @Test

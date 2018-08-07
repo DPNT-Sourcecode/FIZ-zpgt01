@@ -11,6 +11,11 @@ public class FizzBuzzSolution {
         if (number%3 == 0) {
             builder.add("fizz");
         }
+
+        if (number%5 == 0) {
+            builder.add("buzz");
+        }
+
         builder.addAll(getDeluxeCode(number, 3));
 
         if (builder.isEmpty()) {
