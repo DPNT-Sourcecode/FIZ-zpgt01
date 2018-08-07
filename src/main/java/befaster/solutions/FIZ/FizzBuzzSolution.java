@@ -5,6 +5,7 @@ import befaster.runner.SolutionNotImplementedException;
 public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
+        return "";
     }
 
 }
