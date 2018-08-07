@@ -16,7 +16,7 @@ public class FizzBuzzSolution {
             builder.add("buzz");
         }
 
-        builder.addAll(getDeluxeCode(number, 3));
+        builder.addAll(getDeluxeCode(number, 3, 5));
 
         if (builder.isEmpty()) {
             builder.add(String.valueOf(number));
@@ -25,17 +25,19 @@ public class FizzBuzzSolution {
         return String.join(" ", builder);
     }
 
-    public List<String> getDeluxeCode(final int dividend, final int divisor) {
+    public List<String> getDeluxeCode(final int dividend, int... divisors) {
         List builder = new ArrayList<>();
 
-        if (String.valueOf(dividend).contains(String.valueOf(divisor))) {
-            if (dividend%2 == 0) {
-                builder.add("deluxe");
-            } else {
-                builder.add("fake deluxe");
+        for (int divisor: divisors) {
+            if (String.valueOf(dividend).contains(String.valueOf(divisor))) {
+                if (dividend%2 == 0) {
+                    builder.add("deluxe");
+                } else {
+                    builder.add("fake deluxe");
+                }
+                break;
             }
         }
-
         return builder;
     }
 
